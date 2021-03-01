@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/boreumlee/mongoDB#readme",
   "dependencies": {
+    "dotenv": "8.2.0",
     "mongoose": "5.11.18"
   }
 }
