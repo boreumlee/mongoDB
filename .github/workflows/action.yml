@@ -20,9 +20,9 @@ jobs:
   # Job ID: 문자와 -(대시), _(언더바)로 구성된 Job 고유 식별자
   build:
     # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: [self-hosted, linux]
     env:
-      mongo_url:${{ secrets.MONGO_URI}}
+      MONGO_URI:${{ secrets.MONGO_URI}}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
