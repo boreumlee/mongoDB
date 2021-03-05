@@ -12,7 +12,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    # env: MONGO_URI:${{ secrets.MONGO_URI}}
+    env: 
+      mongo_uri: ${{ secrets.MONGO_URI}}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
