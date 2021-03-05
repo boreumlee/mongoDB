@@ -12,14 +12,16 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    env: 
-      mongo_uri: ${{ secrets.MONGO_URI}}
+    # env: 
+    #   mongo_uri: ${{ secrets.MONGO_URI}}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - uses: actions/checkout@v2 # 소스코드 checkout
       - name: checkout source code # step 01 이름
         run: echo "hello world1" # linux command 실행
-
-      - name: say hello # step 02 이름
-        run: echo "hello world" # linux command 실행
+        
+      - name: Create .env file
+        run: |
+          touch .env
+          echo MONGO_URI=${{ secrets.MONGO_URI }} >> .env
